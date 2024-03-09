@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="p-5 bg-primary text-white text-center">
+        <h1>My First Bootstrap 5 Page</h1>
+        <p>Resize this responsive page to see the effect!</p> 
+    </div>
+    
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"><i class="bi bi-house"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-phone"></i> Mobile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-pc-display"></i> PC</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Brand
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"><i class="bi bi-android2"></i> Samsung</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="bi bi-apple"></i> Apple</a></li>
+                      <li><a class="dropdown-item" href="#"><i class="bi bi-plus-circle"></i> Other</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#waiting" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                Chờ xác nhận
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                Đang vận chuyển
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
+                Đã hoàn thành
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#cancel" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
+                Đơn bị huỷ
+              </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="waiting" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                Chờ xác nhận
+            </div>
+            <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                Đang vận chuyển
+            </div>
+            <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                Đã hoàn thành
+            </div>
+            <div class="tab-pane fade" id="cancel" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+                Đã huỷ
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-5 p-4 bg-dark text-white text-center">
+    <p>Footer</p>
+    </div>
+</body>
+</html>
