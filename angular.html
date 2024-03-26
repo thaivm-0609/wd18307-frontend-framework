@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CDN minified -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+    <!-- npm -->
+    <!-- <script src="node_modules/angular/angular.min.js"></script> -->
+    <!-- download minified -->
+    <!-- <script src="libs/angular.min.js"></script> -->
+    <!-- download zip -->
+    <script src="angular-1.8.2/angular.min.js"></script>
+</head>
+<!-- ng-app: khai báo tên ứng dụng -->
+<body ng-app="wd18307">
+    <!-- ng-controller: khai báo controller -->
+    <div class="container" ng-controller="imgController">
+        <img src="{{path}}" alt="">
+        <h1 ng-mouseover="upCount()">{{ count }}</h1>
+        <button class="btn btn-primary" ng-click="upCount()">Bấm</button>
+        
+        <!-- ng-if: nếu đk đúng thì hiển thị -->
+        <p ng-if="count%2 == 0">Đây là số chẵn</p>
+        <!-- ng-show: nếu đk đúng thì hiển thị -->
+        <p ng-show="count%2 == 0">Đây là số chẵn</p>
+        <!-- ng-hide: nếu đk đúng thì ẩn -->
+        <p ng-hide="count%2 == 0">Đây là số lẻ</p>
+
+
+
+        <form action="" class="container" ng-controller="myController">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" ng-model="name">
+            <!-- <h1>Hello {{ student.name }}</h1>
+            <h1>Email {{ student['email'] }}</h1> -->
+            <!-- <h1>Gender {{ student->gender }}</h1>  lỗi--> 
+            <h1 ng-repeat="student in listStudent">Hello {{ student }}</h1>
+            <!-- <img src="{{path}}" alt=""> -->
+            <!-- <img src="{{ $parent.path }}" alt=""> -->
+        </form>
+    </div>
+    
+    <!-- DOM: Document Object Model -->
+
+    <script>
+        var app = angular.module('wd18307',[]); //khởi tạo angular module
+        //C1: viết trực tiếp function
+        // app.controller('myController', function ($scope) {
+        //     $scope.name = 'wd18307'; //khởi tạo biến name
+        // });
+
+        //rút gọn nếu chỉ có 1 controller;
+        app.controller('myController', function ($scope, $rootScope) {
+            // object
+            // $scope.student = {
+            //     name: 'thaivm2',
+            //     email: 'thaivm2@fpt.edu.vn',
+            //     gender: 'male',
+            // }; //khởi tạo biến name
+            // array
+            $scope.listStudent = ['thaivm2', 'thaivm3', 'thaivm4', 'thaivm5'];
+        });
+        app.controller('imgController', function ($scope) {
+            $scope.path = './img/chicago.jpg';
+            $scope.count = 0;
+            $scope.upCount = function () {
+                $scope.count += 1;
+            }
+        })
+        //C2: khởi tạo trước function và gọi tên
+        // function tenFunction($scope) {
+        //     $scope.name = 'wd18307';
+        // }
+        // app.controller('myController',tenFunction);
+    </script>
+</body>
+</html>

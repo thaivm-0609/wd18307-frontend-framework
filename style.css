@@ -2,3 +2,8 @@
     color: red;
     font-weight: bold;
 }
+
+.carousel-caption {
+    color: red;
+    font-weight: 300;
+}
