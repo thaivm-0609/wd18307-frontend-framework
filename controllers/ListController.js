@@ -1,4 +1,4 @@
-window.ListController = function ($scope,$http) {
+window.ListController = function ($scope,$http,$location) {
     var apiUrl = 'http://localhost:3000/products';
     //khai bao ham
     $scope.getProducts = function () {
@@ -9,4 +9,8 @@ window.ListController = function ($scope,$http) {
     }
 
     $scope.getProducts(); //gọi hàm (thực thi)
+
+    $scope.onDetail = function (id) {
+        $location.path(`/detail/${id}`);
+    }
 }
