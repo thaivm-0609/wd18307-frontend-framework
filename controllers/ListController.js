@@ -13,4 +13,16 @@ window.ListController = function ($scope,$http,$location) {
     $scope.onDetail = function (id) {
         $location.path(`/detail/${id}`);
     }
+
+    $scope.onEdit = function (id) {
+        $location.path(`/edit/${id}`);
+    }
+
+    $scope.onDelete = function (id) {
+        if (confirm('Are you sure?')) {
+            $http.delete(`${apiUrl}/${id}`).then(function (res) {
+                $scope.getProducts();
+            })
+        }
+    }
 }
