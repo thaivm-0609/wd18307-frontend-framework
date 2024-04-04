@@ -1,16 +1,67 @@
 <h1>Đây là trang thêm mới</h1>
-<form>
+<form name="addForm">
+    <!-- <div>
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" ng-model="inputValue.email">
+        <p class="text-danger"
+            ng-if="addForm.email.$dirty && addForm.email.$invalid"
+        >
+            Email không đúng định dạng
+        </p>
+    </div> -->
     <div>
         <label for="" class="form-label">Name</label>
-        <input type="text" class="form-control" ng-model="inputValue.name">
+        <input type="text" name="name" class="form-control" ng-model="inputValue.name" required minlength="6" maxlength="99">
+        <p 
+            ng-if="addForm.name.$dirty && addForm.name.$error.required" 
+            class="text-danger"
+        >
+            Tên không được bỏ trống
+        </p>
+        <p 
+            ng-if="addForm.name.$dirty && addForm.name.$error.minlength" 
+            class="text-danger"
+        >
+            Tên không được ít hơn 6 ký tự
+        </p>
+        <p 
+            ng-if="addForm.name.$dirty && addForm.name.$error.maxlength" 
+            class="text-danger"
+        >
+            Tên không được lớn hơn 100 ký tự
+        </p>
     </div>
     <div>
         <label for="" class="form-label">Description</label>
-        <input type="text" class="form-control" ng-model="inputValue.description">
+        <input type="text" name="description" class="form-control" ng-model="inputValue.description" required>
+        <p 
+            ng-if="addForm.description.$dirty && addForm.description.$error.required" 
+            class="text-danger"
+        >
+            Mô tả không được bỏ trống
+        </p>
+    </div>
+    <div>
+        <label for="" class="form-label">Brand</label>
+        <select name="brand" class="form-control" ng-model="inputValue.brand">
+            <option ng-repeat="b in brands" value="{{b.name}}">{{b.name}}</option>
+        </select>
     </div>
     <div>
         <label for="" class="form-label">Price</label>
-        <input type="number" class="form-control" ng-model="inputValue.price">
+        <input type="number" name="price" class="form-control" ng-model="inputValue.price" required min="0">
+        <p 
+            ng-if="addForm.price.$dirty && addForm.price.$error.required" 
+            class="text-danger"
+        >
+            Giá không được bỏ trống
+        </p>
+        <p 
+            ng-if="addForm.price.$dirty && addForm.price.$error.min" 
+            class="text-danger"
+        >
+            Giá không được là số âm
+        </p>
     </div>
     <center>
         <button 
